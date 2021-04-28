@@ -1,0 +1,50 @@
+{%extends 'base.html'%}
+{%block main%}
+<!--<style>
+    .element{
+        margin-left: 350px;
+    }
+    .element2{
+        margin-left: 158px;
+    }
+    .rs{
+        display: inline;
+    }
+</style>-->
+
+<h1>all cart details</h1>
+<form method="POST">
+    {%csrf_token%}
+
+<table border="1px">
+    <tr>
+        <th>id</th>
+        <th>Product_Name</th>
+        <th>Product_price</th>
+        <th>Product_Description</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        <th>Action</th>
+    </tr>
+    {%for i in cr%}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.product.name}}</td>
+        <td>{{i.product.price}}</td>
+        <td>{{i.product.description}}</td>
+        <td><input type="number" value="1" name="qty"></td>
+        <td><input type="text" value="{{i.product.price}}"></td>
+        <td><a href="{%url 'Order:delete' i.id%}">delete</a></td>
+
+    </tr>
+    {%endfor%}
+    <tr>
+        <td colspan="5"><input type="submit" value="place order"></td>
+        <td colspan="2">Totalbill:{{total}}
+            <input type="hidden" value="{{total}}" name="totalbill">
+        </td>
+    </tr>
+</table>
+</form>
+
+{%endblock%}

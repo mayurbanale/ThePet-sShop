@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>ThePet'sShop</title>
+    {%load static%}
+    <!-- Bootstrap core CSS -->
+    <link href="{%static 'css/bootstrap.css'%}" rel="stylesheet">
+    <!-- Fontawesome core CSS -->
+    <link href="{%static 'css/font-awesome.min.css'%}" rel="stylesheet" />
+    <!--GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!--Slide Show Css -->
+    <link href="{%static 'ItemSlider/css/main-style.css'%}" rel="stylesheet" />
+    <!-- custom CSS here -->
+    <link href="{%static 'css/style.css'%}" rel="stylesheet" />
+</head>
+<body>
+   
+        <!----------------------------------------------------navbar starts------------------------------------------>
+                {%include 'navbar.html'%}
+        <!----------------------------------navbar ends---------------------------------------------------------------->
+        <!-- /.container-fluid -->
+    
+    <div class="container">
+        <div class="row">
+            <!-------------------------------------------------scroller start------------------------------>
+            {%include 'scroller.html'%}
+
+             <!-------------------------------------------------scroller end---------------------------------------->
+            <!-- /.col -->
+            
+          </div>  
+            <!-- /.col -->
+        
+        
+        <!-- /.row -->
+        <div class="row">
+            <!--------------------------------------------------sidebar starts--------------------------------------------------->
+            {%include 'sidebar.html'%}
+
+            <!--------------------------------------------------side bar ends------------------------------------------------->
+            <!-- /.row -->
+            
+            
+    <div class="row">
+        
+        <!----------------------------------------------body starts------------------------------------------>
+        {% block main%}
+
+        {% endblock %}
+    
+
+        </div>
+        
+    
+    <!-- /.row -->
+    
+    </div>
+                    <!-- /.row -->
+    <!----------------------------------------------------body ends----------------------------------------------------------->
+    
+</div>
+    <!-- /.container -->
+    <!--<div class="col-md-12 download-app-box text-center">
+
+        <span class="glyphicon glyphicon-download-alt"></span>Download Our Android App and Get 10% additional Off on all Products . <a href="#" class="btn btn-danger btn-lg">DOWNLOAD  NOW</a>
+
+    </div>-->
+    
+
+    <!--Footer -->
+    <div class="col-md-12 footer-box">
+
+
+        
+        <div class="row">
+            <!---------------------------------------------------------------FOoter starts--------------------------------------->
+            {%include 'footer.html'%}
+            <!-----------------------------footer ends----------------------------------------->
+            
+        <hr>
+    </div>
+    </div>
+    <!-- /.col -->
+    <div class="col-md-12 end-box ">
+       <!----------------------------------------------------------------copy starts--------------------------------->
+       {%include 'copy.html'%}
+       <!---------------------------------copy ends------------------------------------------------------>
+    </div>
+
+    <!-- /.col -->
+    <!--Footer end -->
+    <!--Core JavaScript file  -->
+    <script src="{%static 'js/jquery-1.10.2.js'%}"></script>
+    <!--bootstrap JavaScript file  -->
+    <script src="{%static 'js/bootstrap.js'%}"></script>
+    <!--Slider JavaScript file  -->
+    <script src="{%static 'ItemSlider/js/modernizr.custom.63321.js'%}"></script>
+    <script src="{%static 'ItemSlider/js/jquery.catslider.js'%}"></script>
+    <script>
+        $(function () {
+
+            $('#mi-slider').catslider();
+
+        });
+		</script>
+</body>
+</html>

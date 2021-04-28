@@ -1,0 +1,30 @@
+{%extends 'base1.html'%}
+{%block main%}
+{%for x in pl%}
+
+<div class="col-md-4 text-center col-sm-6 col-xs-6">
+    <div class="thumbnail product-box">
+        <img src="{{x.img}}" alt="" height="100px" width="100px"/>
+        <div class="caption">
+            <h3><a href="#">{{x.category}}</a></h3>
+            <h2>{{x.name}}</h2>
+            
+            <p>Price : <strong>discount_price</strong>  </p>
+            
+            <p>Price : <strong>&#x20B9 {{x.price}}</strong>  </p>
+            
+            <!--<p><a href="#">Ptional dismiss button </a></p>-->
+            <p>{{x.discription}}</p>
+            <p>{{x.discription}}</p>
+            {% if user.is_authenticated %}
+            <p><a href="{%url 'Order:addcart' x.id%}" class="btn btn-success" role="button">Add To Cart</a>
+            {%else%}
+            <p><a href="{%url 'Account:login'%}" class="btn btn-success" role="button">Add To Cart</a>
+            {%endif%}
+        </div>
+    </div>
+</div>
+{%endfor%}
+
+
+{%endblock%}

@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{%block main%}
+<h1>all cart details</h1>
+<form method="POST">
+    {%csrf_token%}
+
+<table border="1px">
+    <tr>
+        <th>id</th>
+        <th>totalbill</th>
+        <th>status</th>
+        <th>Date</th>
+        <th>user</th>
+        
+        <th>Action</th>
+    </tr>
+    {%for i in odr%}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.totalbill}}</td>
+        <td>{{i.status}}</td>
+        <td>{{i.order_date}}</td>
+        <td>{{i.user}}</td>
+        
+        <td><a href="{%url 'Order:delete' i.id%}">delete</a></td>
+
+    </tr>
+    {%endfor%}
+    
+</table>
+</form>
+{%endblock%}

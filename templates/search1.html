@@ -1,0 +1,9 @@
+{%block search%}
+<form class="navbar-form navbar-right" role="search" method="POST">
+    {%csrf_token%}
+<div class="form-group">
+    <input type="text" placeholder="Enter Keyword Here ..." class="form-control" name="srch">
+</div>
+ <button type="submit" class="btn btn-secondery"><a href="">Search</a></button>
+</form>
+{%endblock%}
